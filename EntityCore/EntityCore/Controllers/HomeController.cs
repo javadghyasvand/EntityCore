@@ -13,10 +13,7 @@ namespace EntityCore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        private readonly DataContext _dataContext;
 
         public IActionResult Index()
         {
