@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityCore
 {
@@ -23,6 +24,8 @@ namespace EntityCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var ConnectionString = Configuration.GetConnectionString("EntityCoreDb");
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(ConnectionString));
             services.AddControllersWithViews();
         }
 
