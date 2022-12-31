@@ -11,6 +11,8 @@ namespace EntityCore.Models
         public long Inventory { get; set; }
         public DateTime DateTime { get; set; }
 
+        public bool IsInStok { get; set; }
+
         public Product(string name, string description, double price, long inventory)
         {
             Name = name;
